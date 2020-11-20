@@ -1,4 +1,7 @@
-package com.gfa.trialexam.solution;
+package com.gfa.trialexam;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class ThreeSum {
     public static void main(String[] args) {
@@ -26,5 +29,25 @@ public class ThreeSum {
 
     Amivel vissza kell térnie: `-1`, mert nincs 3 elem a tömbben.
     */
+
+        System.out.println(threeSum(new int[] { 1, 2, 3, 4, 5 }));
+        System.out.println(threeSum(new int[] {100, 450, 200, 5 }));
+        System.out.println(threeSum(new int[] {1, 2 }));
+    }
+
+
+    public static int threeSum(int[] array){
+
+        if (array.length<3){return -1;}
+        Arrays.sort(array);
+
+        int sum = 0;
+        for (int i = 0; i < 3 ; i++) {
+
+                sum += array[i];
+
+        }
+
+        return sum;
     }
 }
