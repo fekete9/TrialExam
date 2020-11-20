@@ -1,4 +1,4 @@
-package com.gfa.trialexam.solution;
+package com.gfa.trialexam;
 
 public class GrammarCheck {
     public static void main(String[] args) {
@@ -23,5 +23,18 @@ public class GrammarCheck {
 
     Amivel vissza kell térnie: `false`.
     */
+        System.out.println(grammarCheck("Ez egy jó példa. Ez egy jó példa."));
+        System.out.println(grammarCheck("ez még mindig egy jó példa. Hiszen a második mondat nagybetűvel kezdődik."));
+        System.out.println(grammarCheck("Ez egy rossz példa. itt nincs nagybetű."));
+    }
+    public static boolean grammarCheck(String text){
+        String[] arrOfStr = text.split("\\.");
+        for (int i = 1; i <arrOfStr.length ; i++) {
+            if (!Character.isUpperCase(arrOfStr[i].charAt(1))){
+                return false;
+            }
+        }
+
+        return true;
     }
 }
